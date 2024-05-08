@@ -96,11 +96,9 @@ const fetchHTML = async (url) => {
 }
 
 const main = async (url) => {
-    // const htmlContent = await fetchHTML(url);
-    const htmlContent = await fetchHTMLWithPuppeteer(url);
+    const htmlContent = await fetchHTML(url);
 
     const dom = new JSDOM(htmlContent);
-    // const dom = new JSDOM(htmlString);
 
     const map = new Map([[0, 0]]);
     const root = dom.window.document.querySelector('body');
